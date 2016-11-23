@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sudoku_CHABRIER_REGNARD
 {
-    class Box
+    public class Box
     {
+        
         private HashSet<int> column;
         private HashSet<int> line;
         private HashSet<int> square;
@@ -45,9 +46,6 @@ namespace Sudoku_CHABRIER_REGNARD
             List < int > list = allowedValues.ToList();
             value = list[index];
 
-        }
-
-
-        
+        }       
     }
 }
