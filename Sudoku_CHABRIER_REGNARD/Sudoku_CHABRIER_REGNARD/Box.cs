@@ -48,7 +48,12 @@ namespace Sudoku_CHABRIER_REGNARD
             List < int > list = allowedValues.ToList();
             value = list[index];
 
-        }  
+        } 
+        
+        public int getValue()
+        {
+            return value;
+        } 
 
         public HashSet<int> getAllowed()
         {

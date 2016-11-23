@@ -70,7 +70,36 @@ namespace Sudoku_CHABRIER_REGNARD.Tests
         [TestMethod()]
         public void randValueTest()
         {
+            HashSet<int> column = new HashSet<int>();
+            HashSet<int> line = new HashSet<int>();
+            HashSet<int> square = new HashSet<int>();
 
+            column.Add(1);
+            column.Add(2);
+            column.Add(3);
+            column.Add(4);
+            column.Add(5);
+            column.Add(6);
+            column.Add(7);
+            column.Add(8);
+            Box box = new Box(column, line, square);
+            box.diffValues();
+            box.randValue();
+
+            Assert.AreEqual(9, box.getValue(), "randValue not working when one value left");
+
+
+            column.Remove(5);
+            column.Remove(7);
+
+            bool good = false;
+            box.diffValues();
+            box.randValue();
+
+            if (box.getValue() == 7 || box.getValue() == 9 || box.getValue() == 5)
+                good = true;
+
+            Assert.AreEqual(true, good, "randValue not working when multiple values in list");
         }
     }
 }
