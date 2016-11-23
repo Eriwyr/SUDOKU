@@ -16,6 +16,7 @@ namespace Sudoku_CHABRIER_REGNARD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Sudoku su = new Sudoku();
             Application.Run(new Form1());
         }
     }
