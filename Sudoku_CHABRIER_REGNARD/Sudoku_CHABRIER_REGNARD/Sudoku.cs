@@ -8,5 +8,14 @@ namespace Sudoku_CHABRIER_REGNARD
 {
     class Sudoku
     {
+        private Box[,] grid;
+
+        public Sudoku()
+        {
+
+        }
+
     }
+
+
 }
