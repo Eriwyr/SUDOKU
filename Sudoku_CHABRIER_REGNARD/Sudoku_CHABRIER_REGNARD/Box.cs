@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace Sudoku_CHABRIER_REGNARD
             this.square = square;
 
             allowedValues = new HashSet<int>();
-            for(int i =1; i<9; i++)
+            for(int i =1; i<=9; i++)
             {
                 allowedValues.Add(i);
             }
@@ -39,6 +40,7 @@ namespace Sudoku_CHABRIER_REGNARD
 
         }
 
+
         public void randValue()
         {
             Random rand = new Random();
@@ -46,6 +48,26 @@ namespace Sudoku_CHABRIER_REGNARD
             List < int > list = allowedValues.ToList();
             value = list[index];
 
-        }       
+        }  
+
+        public HashSet<int> getAllowed()
+        {
+            return allowedValues;
+        }
+        
+        public void addColumn(int value)
+        {
+            column.Add(value);
+        }
+
+        public void addLine(int value)
+        {
+            line.Add(value);
+        }
+
+        public void addSquare(int value)
+        {
+            square.Add(value);
+        }
     }
 }
