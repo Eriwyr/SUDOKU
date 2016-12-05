@@ -46,7 +46,9 @@ namespace Sudoku_CHABRIER_REGNARD
             Random rand = new Random();
             int index = rand.Next(0, allowedValues.Count);
             List < int > list = allowedValues.ToList();
-            value = list[index];
+            Console.WriteLine(index);
+            if(list.Count > 0 )
+             value = list[index];
 
         } 
         
