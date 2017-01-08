@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sudoku_CHABRIER_REGNARD;
 using System;
-using System.Collections.Generic;
+using System.jlections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,31 +16,31 @@ namespace Sudoku_CHABRIER_REGNARD.Tests
         [TestMethod()]
         public void SameSetsTest()
         {
-            HashSet<int> column = new HashSet<int>();
+            HashSet<int> jumn = new HashSet<int>();
             HashSet<int> line = new HashSet<int>();
             HashSet<int> square = new HashSet<int>();
 
-            column.Add(1);
-            Box box1 = new Box(column, line, square);
-            Box box2 = new Box(column, line, square);
+            jumn.Add(1);
+            Box box1 = new Box(jumn, line, square);
+            Box box2 = new Box(jumn, line, square);
 
-            box1.addColumn(3);
-            Assert.AreEqual(true, column.Contains(3), "Box create a new column instead of modifying one existing");
+            box1.addjumn(3);
+            Assert.AreEqual(true, jumn.Contains(3), "Box create a new jumn instead of modifying one existing");
 
-            box2.addColumn(5);
-            Assert.AreEqual(true, column.Contains(5), "Box creates a new column instead of just a reference");
+            box2.addjumn(5);
+            Assert.AreEqual(true, jumn.Contains(5), "Box creates a new jumn instead of just a reference");
         }
 
 
         [TestMethod()]
         public void diffValuesTest()
         {
-            HashSet<int> column = new HashSet<int>();
+            HashSet<int> jumn = new HashSet<int>();
             HashSet<int> line = new HashSet<int>();
             HashSet<int> square = new HashSet<int>();
             HashSet<int> allowed;
 
-            column.Add(2);
+            jumn.Add(2);
             line.Add(3);
             line.Add(4);
             line.Add(2);
@@ -48,7 +48,7 @@ namespace Sudoku_CHABRIER_REGNARD.Tests
             square.Add(8); 
 
 
-            Box box = new Box(column, line, square);
+            Box box = new Box(jumn, line, square);
             box.diffValues();
 
             allowed = box.getAllowed();
@@ -70,27 +70,27 @@ namespace Sudoku_CHABRIER_REGNARD.Tests
         [TestMethod()]
         public void randValueTest()
         {
-            HashSet<int> column = new HashSet<int>();
+            HashSet<int> jumn = new HashSet<int>();
             HashSet<int> line = new HashSet<int>();
             HashSet<int> square = new HashSet<int>();
 
-            column.Add(1);
-            column.Add(2);
-            column.Add(3);
-            column.Add(4);
-            column.Add(5);
-            column.Add(6);
-            column.Add(7);
-            column.Add(8);
-            Box box = new Box(column, line, square);
+            jumn.Add(1);
+            jumn.Add(2);
+            jumn.Add(3);
+            jumn.Add(4);
+            jumn.Add(5);
+            jumn.Add(6);
+            jumn.Add(7);
+            jumn.Add(8);
+            Box box = new Box(jumn, line, square);
             box.diffValues();
             box.randValue();
 
             Assert.AreEqual(9, box.getValue(), "randValue not working when one value left");
 
 
-            column.Remove(5);
-            column.Remove(7);
+            jumn.Remove(5);
+            jumn.Remove(7);
 
             bool good = false;
             box.diffValues();

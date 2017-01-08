@@ -15,6 +15,7 @@ namespace Sudoku_CHABRIER_REGNARD
         private static int COLUMN_WIDTH = 70;
         private static int ROW_HEIGHT = 70;
         private Sudoku sudokuGrid;
+        private bool isGenarated;
         public Form1()
         {
             InitializeComponent();
@@ -38,26 +39,94 @@ namespace Sudoku_CHABRIER_REGNARD
         }
 
         private void gen_Click_1(object sender, EventArgs e)
-        {   
-            int ligne = 0, col = 0;
-            //MessageBox.Show("1");
+        {
+            
             sudokuGrid = new Sudoku();
-            sudokuGrid.generation();
-            sudokuGrid.hideCells(50);
-            //MessageBox.Show("algo finit");
-           for (int position = 0; position < 81; ++position)
+
+            sudokuGrid.launchGame();
+
+            isGenarated = true;
+
+            for (int i = 0; i < 9; i++)
             {
-                ligne = position / 9;
-                col = position % 9;
-                sudoku.Rows[ligne].Cells[col].Style.BackColor = Color.LightGray;
-                sudoku.Rows[ligne].Cells[col].ReadOnly = true;
-                sudoku.Rows[ligne].Cells[col].Value = sudokuGrid.getValueIJ(ligne, col);
-                if((int)sudoku.Rows[ligne].Cells[col].Value == 0)
+                for (int j = 0; j < 9; j++)
                 {
-                    sudoku.Rows[ligne].Cells[col].Value = null;
-                    sudoku.Rows[ligne].Cells[col].Style.BackColor = Color.White;
-                    sudoku.Rows[ligne].Cells[col].ReadOnly = false;
+                    sudoku.Rows[i].Cells[j].Selected = false;
+                    sudoku.Rows[i].Cells[j].Style.BackColor = Color.LightGray;
+                    sudoku.Rows[i].Cells[j].ReadOnly = true;
+                    sudoku.Rows[i].Cells[j].Value = sudokuGrid.getValueIJ(i, j);
+                    if ((int)sudoku.Rows[i].Cells[j].Value == 0)
+                    {
+                        sudoku.Rows[i].Cells[j].Value = null;
+                        sudoku.Rows[i].Cells[j].Style.BackColor = Color.White;
+                        sudoku.Rows[i].Cells[j].ReadOnly = false;
+
+                    }
+
                 }
+            }
+        }
+
+        private void check_Click(object sender, EventArgs e)
+        {
+            message.Text = "";
+            if (isGenarated)
+            {
+
+
+                for (int i = 0; i < 9; i++)
+                {
+                    for (int j = 0; j < 9; j++)
+                    {
+
+                        try
+                        {
+                            int value;
+                            if (sudoku.Rows[i].Cells[j].Value == null)
+                            {
+                                value = 0;
+                                throw new ArgumentNullException();
+                            }
+                            else
+                                value = int.Parse(sudoku.Rows[i].Cells[j].Value.ToString());
+                            sudokuGrid.setIJ(i, j, value);
+                        }
+
+
+                        catch (InvalidCastException exp)
+                        {
+
+                            message.ForeColor = Color.Red;
+                            message.Text += "Enter only numbers !\r\n";
+                        }
+                        catch (ArgumentNullException exp)
+                        {
+                            message.ForeColor = Color.Red;
+                            message.Text += "Fill all boxes !\r\n";
+                        }
+                        catch (FormatException exp)
+                        {
+                            message.ForeColor = Color.Red;
+                            message.Text += "Enter only numbers !\r\n";
+                        }
+                    }
+                }
+
+                if (sudokuGrid.checkAnswer())
+                {
+                    message.ForeColor = Color.Green;
+                    message.Text = "You win !\r\n";
+                }
+                else
+                {
+                    message.ForeColor = Color.Red;
+                    message.Text += "Try again !\r\n";
+                }
+            }
+            else
+            {
+                message.ForeColor = Color.Red;
+                message.Text = "Generate grid first!\r\n";
             }
         }
 

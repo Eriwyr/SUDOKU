@@ -30,6 +30,9 @@
         {
             this.sudoku = new System.Windows.Forms.DataGridView();
             this.gen = new System.Windows.Forms.Button();
+            this.check = new System.Windows.Forms.Button();
+            this.message = new System.Windows.Forms.Label();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             ((System.ComponentModel.ISupportInitialize)(this.sudoku)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,17 +58,49 @@
             this.gen.UseVisualStyleBackColor = true;
             this.gen.Click += new System.EventHandler(this.gen_Click_1);
             // 
+            // check
+            // 
+            this.check.Location = new System.Drawing.Point(687, 111);
+            this.check.Name = "check";
+            this.check.Size = new System.Drawing.Size(211, 62);
+            this.check.TabIndex = 2;
+            this.check.Text = "Validate Grid";
+            this.check.UseVisualStyleBackColor = true;
+            this.check.Click += new System.EventHandler(this.check_Click);
+            // 
+            // message
+            // 
+            this.message.AutoSize = true;
+            this.message.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.message.Location = new System.Drawing.Point(687, 336);
+            this.message.MinimumSize = new System.Drawing.Size(211, 62);
+            this.message.Name = "message";
+            this.message.Size = new System.Drawing.Size(211, 62);
+            this.message.TabIndex = 4;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 697);
+            this.splitter1.TabIndex = 5;
+            this.splitter1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 697);
+            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.message);
+            this.Controls.Add(this.check);
             this.Controls.Add(this.gen);
             this.Controls.Add(this.sudoku);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "The Amazing Fucking Great Sudoku";
             ((System.ComponentModel.ISupportInitialize)(this.sudoku)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -73,6 +108,9 @@
 
         private System.Windows.Forms.DataGridView sudoku;
         private System.Windows.Forms.Button gen;
+        private System.Windows.Forms.Button check;
+        private System.Windows.Forms.Label message;
+        private System.Windows.Forms.Splitter splitter1;
     }
 }
 

@@ -120,5 +120,37 @@ namespace Sudoku_CHABRIER_REGNARD
             }
         }
 
+        public void launchGame()
+        {
+            this.generation();
+            this.displayGrid();
+            this.hideCells(1);
+
+        }
+
+        public bool checkAnswer()
+        {
+            bool correct = true;
+
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (gridToSolve.getBoxIJ(i, j).getValue() != grid.getBoxIJ(i, j).getValue())
+                    {
+                        correct = false;
+                        break;
+                    }
+                }
+            }
+
+            return correct; 
+        }
+
+        public void setIJ(int i, int j, int value)
+        {
+            gridToSolve.getBoxIJ(i, j).setValue(value);
+        }
+
     }
 }
