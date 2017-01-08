@@ -43,7 +43,7 @@ namespace Sudoku_CHABRIER_REGNARD
             
             sudokuGrid = new Sudoku();
 
-            sudokuGrid.launchGame();
+            sudokuGrid.launchGame(20);
 
             isGenarated = true;
 

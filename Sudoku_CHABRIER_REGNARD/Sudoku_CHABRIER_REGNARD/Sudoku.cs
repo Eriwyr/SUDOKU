@@ -113,18 +113,20 @@ namespace Sudoku_CHABRIER_REGNARD
         }
 
         public void hideCells(int n)
-        {
+        { 
+
+        
             for(int i = 0; i < n; i++)
             {
                 solver.removeBox();
             }
         }
 
-        public void launchGame()
+        public void launchGame(int n)
         {
             this.generation();
             this.displayGrid();
-            this.hideCells(1);
+            this.hideCells(n);
 
         }
 
