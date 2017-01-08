@@ -121,5 +121,16 @@ namespace Sudoku_CHABRIER_REGNARD
             return true;
         }
 
+        public void setFromGrid(Grid g)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    grid[i, j].setValue(g.grid[i, j].getValue());
+                }
+            }
+        }
+
     }
 }

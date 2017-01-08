@@ -47,8 +47,11 @@ namespace Sudoku_CHABRIER_REGNARD
                 {
                     tmpBox.setValue(val);
                     tmpBox.addAll(val);
+                    
                     if (solve(indexes.pop()))
                         nbSol++;
+                    
+                  
 
                     tmpBox.remove();
                     tmpBox.setValue(0);
@@ -74,7 +77,9 @@ namespace Sudoku_CHABRIER_REGNARD
 
         public bool solve(Index curInd)
         {
-           
+
+            if (curInd == null)
+                return true;           
             Box tmpBox = grid.getBoxIJ(curInd.getI(), curInd.getJ());
             tmpBox.diffValues();
           

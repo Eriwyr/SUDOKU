@@ -24,7 +24,10 @@ namespace Sudoku_CHABRIER_REGNARD
 
         public bool isFirst()
         {
-            return head.Prev == null;
+            if (head != null)
+                return head.Prev == null;
+            else
+                return true;
         }
 
         public Index pop()
