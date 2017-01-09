@@ -15,6 +15,7 @@ namespace Sudoku_CHABRIER_REGNARD
         private Grid grid;
         private Grid gridToSolve;
         private Solver solver;
+        private int level;
 
         public Sudoku()
         {
@@ -23,6 +24,7 @@ namespace Sudoku_CHABRIER_REGNARD
             squares = new List<HashSet<int>>();
             grid = new Grid();
             gridToSolve = new Grid();
+            level = 10;
             for (int i = 0; i < 9; i++)
             {
                 columns.Add(new HashSet<int>());
@@ -112,9 +114,9 @@ namespace Sudoku_CHABRIER_REGNARD
             solver = new Solver(gridToSolve);
         }
 
-        public void hideCells(int n)
+        public void hideCells(int level)
         {
-            for(int i = 0; i < n; i++)
+            for(int i = 0; i < level; i++)
             {
                 solver.removeBox();
             }
@@ -124,7 +126,7 @@ namespace Sudoku_CHABRIER_REGNARD
         {
             this.generation();
             this.displayGrid();
-            this.hideCells(1);
+            this.hideCells(level);
 
         }
 
@@ -150,6 +152,11 @@ namespace Sudoku_CHABRIER_REGNARD
         public void setIJ(int i, int j, int value)
         {
             gridToSolve.getBoxIJ(i, j).setValue(value);
+        }
+
+        public void setLevel(int level)
+        {
+            this.level = level;
         }
 
     }

@@ -15,6 +15,7 @@ namespace Sudoku_CHABRIER_REGNARD
         private static int COLUMN_WIDTH = 70;
         private static int ROW_HEIGHT = 70;
         private Sudoku sudokuGrid;
+        private int level;
         private bool isGenarated;
         public Form1()
         {
@@ -43,6 +44,7 @@ namespace Sudoku_CHABRIER_REGNARD
             
             sudokuGrid = new Sudoku();
 
+            sudokuGrid.setLevel(level);
             sudokuGrid.launchGame();
 
             isGenarated = true;
@@ -130,6 +132,24 @@ namespace Sudoku_CHABRIER_REGNARD
             }
         }
 
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 menu = new Form2();
+            this.Hide();
+            menu.Show();
+            
+            
+        }
+
+        public void setLevel(int level)
+        {
+            this.level = level;
+        }
     }
 }
 
