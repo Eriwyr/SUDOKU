@@ -126,6 +126,7 @@
             this.Controls.Add(this.gen);
             this.Controls.Add(this.sudoku);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Amazing Fucking Great Sudoku";
             ((System.ComponentModel.ISupportInitialize)(this.sudoku)).EndInit();
             this.ResumeLayout(false);
