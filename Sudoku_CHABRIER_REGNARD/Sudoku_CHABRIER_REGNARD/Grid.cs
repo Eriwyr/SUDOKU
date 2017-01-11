@@ -12,6 +12,8 @@ namespace Sudoku_CHABRIER_REGNARD
         private int currentI;
         private int currentJ;
 
+        //Uses Iterator-like way of iterrating through the grid.
+
         public Grid()
         {
             grid = new Box[9, 9];
@@ -45,7 +47,7 @@ namespace Sudoku_CHABRIER_REGNARD
         {
             return currentJ;
         }
-        public void next() // return true if we are at the end of the grid.
+        public void next()
         {
             // i = current index of lines
             // j = current index of columns
@@ -72,7 +74,7 @@ namespace Sudoku_CHABRIER_REGNARD
         }
         
          
-        public void previous()
+        public void previous() //Change the indexes to go to the previous element.
         {
             if (currentJ > 0)
             {
@@ -101,7 +103,7 @@ namespace Sudoku_CHABRIER_REGNARD
         }
 
 
-        public bool isValid()
+        public bool isValid() //Check if the grid is valid
         {
             currentI = 0;
             currentJ = 0;
@@ -121,7 +123,7 @@ namespace Sudoku_CHABRIER_REGNARD
             return true;
         }
 
-        public void setFromGrid(Grid g)
+        public void setFromGrid(Grid g)//Copy the grid values.
         {
             for (int i = 0; i < 9; i++)
             {
