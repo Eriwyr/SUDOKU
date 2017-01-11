@@ -10,14 +10,14 @@ namespace Sudoku_CHABRIER_REGNARD
     public class Box
     {
         
-        private HashSet<int> column;
-        private HashSet<int> line;
-        private HashSet<int> square;
+        private HashSet<int> column; //This is a HashSet containing the values in the column
+        private HashSet<int> line; //This is a HashSet containing the values in the line
+        private HashSet<int> square; //This is a HashSet containing the values in the square
 
-        private HashSet<int> allowedValues;
-        private HashSet<int> forbiddenValues;
+        private HashSet<int> allowedValues; //This will contain the allowed values in this box
+        private HashSet<int> forbiddenValues; //This will contain restrained values ( for the recursive algorithm )
 
-        private bool wasTested;
+        private bool wasTested; //Boolean to know if it was tested or not
 
 
         private int value;
@@ -39,7 +39,7 @@ namespace Sudoku_CHABRIER_REGNARD
             get; set;
         }
 
-        public void resetAllowed()
+        public void resetAllowed() //By default, every value is allowed
         {
             for (int i = 1; i <= 9; i++)
             {
@@ -47,17 +47,17 @@ namespace Sudoku_CHABRIER_REGNARD
             }
         }
 
-        public bool isUnique()
+        public bool isUnique() //We check if the allowed value is unique
         {
             return allowedValues.Count == 1;
         }
 
-        public bool checkAllowed(int value)
+        public bool checkAllowed(int value) //Checks if the value is allowed
         {
             return allowedValues.Contains(value);
         }
 
-        public void diffValues()
+        public void diffValues() //Remove values from allowed values ( by hashset differences)
         {
 
             resetAllowed();
@@ -69,7 +69,7 @@ namespace Sudoku_CHABRIER_REGNARD
         }
 
 
-        public int randValue()
+        public int randValue() //Give a random value among the allowed ones.
         {
             Random rand = new Random();
             int index = rand.Next(0, allowedValues.Count);
@@ -79,7 +79,7 @@ namespace Sudoku_CHABRIER_REGNARD
 
         } 
 
-        public void addAll(int value)
+        public void addAll(int value) //Add in line, column, square the value
         {
             addColumn(value);
             addLine(value);
