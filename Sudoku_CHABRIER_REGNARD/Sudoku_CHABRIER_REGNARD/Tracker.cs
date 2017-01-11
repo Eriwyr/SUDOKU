@@ -10,6 +10,8 @@ namespace Sudoku_CHABRIER_REGNARD
     {
         private Index head;
 
+
+        //Add an new index at the top of the stack
         public void push(Index i)
         {
 
@@ -22,6 +24,7 @@ namespace Sudoku_CHABRIER_REGNARD
           
         }
 
+        //Say if it's first element or not
         public bool isFirst()
         {
             if (head != null)
@@ -30,6 +33,7 @@ namespace Sudoku_CHABRIER_REGNARD
                 return true;
         }
 
+        //Return element on top of the stack
         public Index pop()
         {
             Index toPop = head;
