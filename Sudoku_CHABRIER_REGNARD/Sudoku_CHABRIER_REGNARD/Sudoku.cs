@@ -9,11 +9,11 @@ namespace Sudoku_CHABRIER_REGNARD
 {
     public class Sudoku
     {
-        private List<HashSet<int>> columns;
-        private List<HashSet<int>> lines;
-        private List<HashSet<int>> squares;
-        private Grid grid;
-        private Grid gridToSolve;
+        private List<HashSet<int>> columns; //9 columns
+        private List<HashSet<int>> lines; //9 lines
+        private List<HashSet<int>> squares; //9 squares
+        private Grid grid; //Grid complete
+        private Grid gridToSolve; //Grid with missing boxes => will be played on
         private Solver solver;
         private int level;
 
@@ -48,40 +48,41 @@ namespace Sudoku_CHABRIER_REGNARD
 
         public void generateGrid()
         {
-            if (grid.isLast())
+            if (grid.isLast()) //If we generated every box
             {
-                return;
+                return; //We stop
             }
-            Box tmpBox = grid.getCurrentBox();
+            Box tmpBox = grid.getCurrentBox(); 
 
             if (tmpBox.getValue() != 0)
             {
                 tmpBox.remove();
             }
 
-            tmpBox.diffValues();
+            tmpBox.diffValues(); //Listing possible values for the current box
             int nb;
-            if (!tmpBox.isEmpty())
+            if (!tmpBox.isEmpty()) //If we have possible values
             {
 
                 nb = tmpBox.randValue(); //Return a random values in the allowed values.
 
-                tmpBox.setValue(nb);
-                tmpBox.addAll(nb);
-                tmpBox.addForbidden(nb);
+                tmpBox.setValue(nb); //We set the value of the box
+                tmpBox.addAll(nb); //We make sure it's added in the corresponding line, column, square
+                tmpBox.addForbidden(nb); //We add it to the forbidden so that when we go back (backtrack)
+                                         // We do not check this value again
 
-                //REcursive call on the next box
-                grid.next();
+                //Recursive call on the next box
+                grid.next(); //We iterate on our grid
                 generateGrid();
 
             }
 
-            else
+            else //Otherwise if no possible values, we have to go back !!!! (88 miles/h)
             {
 
-                tmpBox.setValue(0);
-                tmpBox.resetForbidden();
-                grid.previous();
+                tmpBox.setValue(0); //We remove the value
+                tmpBox.resetForbidden(); //We remove the forbidden values
+                grid.previous(); //We iterate back
                 generateGrid();
             }
 
@@ -108,13 +109,13 @@ namespace Sudoku_CHABRIER_REGNARD
 
         public void generation()
         {
-            generateGrid();
+            generateGrid(); //create the complete grid
 
-            gridToSolve.setFromGrid(grid);
+            gridToSolve.setFromGrid(grid); //Copy the complete grid
             solver = new Solver(gridToSolve);
         }
 
-        public void hideCells(int level)
+        public void hideCells(int level) //hide as many cells as passed in parameters
         {
             for(int i = 0; i < level; i++)
             {
@@ -130,7 +131,7 @@ namespace Sudoku_CHABRIER_REGNARD
 
         }
 
-        public bool checkAnswer()
+        public bool checkAnswer() //When we validate the grid, we compare both of them.
         {
             bool correct = true;
 
