@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku_CHABRIER_REGNARD", "Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD.csproj", "{40519EBD-CA36-4F0D-9A60-6A68B6D6FA44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sudoku_CHABRIER_REGNARDTests", "Sudoku_CHABRIER_REGNARDTests\Sudoku_CHABRIER_REGNARDTests.csproj", "{04C50D80-4B15-4347-9C47-8CED5142D303}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40519EBD-CA36-4F0D-9A60-6A68B6D6FA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40519EBD-CA36-4F0D-9A60-6A68B6D6FA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40519EBD-CA36-4F0D-9A60-6A68B6D6FA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40519EBD-CA36-4F0D-9A60-6A68B6D6FA44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C50D80-4B15-4347-9C47-8CED5142D303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C50D80-4B15-4347-9C47-8CED5142D303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C50D80-4B15-4347-9C47-8CED5142D303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C50D80-4B15-4347-9C47-8CED5142D303}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
