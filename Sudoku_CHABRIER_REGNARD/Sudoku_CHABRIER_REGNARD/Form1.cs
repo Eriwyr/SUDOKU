@@ -17,6 +17,8 @@ namespace Sudoku_CHABRIER_REGNARD
         private Sudoku sudokuGrid;
         private int level;
         private bool isGenarated;
+        private bool onlyNumbers;
+        private bool allFilled;
         public Form1()
         {
             InitializeComponent();
@@ -72,6 +74,8 @@ namespace Sudoku_CHABRIER_REGNARD
         private void check_Click(object sender, EventArgs e)
         {
             message.Text = "";
+            onlyNumbers = true;
+            allFilled = true;
             if (isGenarated)
             {
 
@@ -97,21 +101,29 @@ namespace Sudoku_CHABRIER_REGNARD
 
                         catch (InvalidCastException exp)
                         {
-
-                            message.ForeColor = Color.Red;
-                            message.Text += "Enter only numbers !\r\n";
+                            onlyNumbers = false;
                         }
                         catch (ArgumentNullException exp)
                         {
-                            message.ForeColor = Color.Red;
-                            message.Text += "Fill all boxes !\r\n";
+                            allFilled = false;
+                            
                         }
                         catch (FormatException exp)
                         {
-                            message.ForeColor = Color.Red;
-                            message.Text += "Enter only numbers !\r\n";
+                            onlyNumbers = false;
                         }
                     }
+                }
+
+                if (!onlyNumbers)
+                {
+                    message.ForeColor = Color.Red;
+                    message.Text += "Enter only numbers !\r\n";
+                }
+                if (!allFilled)
+                {
+                    message.ForeColor = Color.Red;
+                    message.Text += "Fill all boxes !\r\n";
                 }
 
                 if (sudokuGrid.checkAnswer())
