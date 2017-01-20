@@ -132,7 +132,7 @@ namespace Sudoku_CHABRIER_REGNARD
 
                 if (sudokuGrid.checkAnswer())
                 {
-                    message.ForeColor = Color.White;
+                    message.ForeColor = Color.Green;
                     message.Text = "You win !\r\n";
                 }
                 else
@@ -143,7 +143,7 @@ namespace Sudoku_CHABRIER_REGNARD
             }
             else
             {
-                message.ForeColor = Color.Red;
+                message.ForeColor = Color.White;
                 message.Text = "Generate grid first!\r\n";
             }
         }
