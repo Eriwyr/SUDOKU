@@ -1,0 +1,10 @@
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\bin\Debug\Sudoku_CHABRIER_REGNARD.exe.config
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\bin\Debug\Sudoku_CHABRIER_REGNARD.exe
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\bin\Debug\Sudoku_CHABRIER_REGNARD.pdb
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\obj\Debug\Sudoku_CHABRIER_REGNARD.csprojResolveAssemblyReference.cache
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\obj\Debug\Sudoku_CHABRIER_REGNARD.Form1.resources
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\obj\Debug\Sudoku_CHABRIER_REGNARD.Form2.resources
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\obj\Debug\Sudoku_CHABRIER_REGNARD.Properties.Resources.resources
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\obj\Debug\Sudoku_CHABRIER_REGNARD.csproj.GenerateResource.Cache
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\obj\Debug\Sudoku_CHABRIER_REGNARD.exe
+C:\Users\penislol\Documents\SUDOKU\Sudoku_CHABRIER_REGNARD\Sudoku_CHABRIER_REGNARD\obj\Debug\Sudoku_CHABRIER_REGNARD.pdb

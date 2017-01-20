@@ -38,6 +38,10 @@ namespace Sudoku_CHABRIER_REGNARD
             }
 
             sudokuGrid = new Sudoku();
+            sudoku.Columns[2].DividerWidth = 3;
+            sudoku.Columns[5].DividerWidth = 3;
+            sudoku.Rows[2].DividerHeight = 3;
+            sudoku.Rows[5].DividerHeight = 3;
 
         }
 
@@ -117,23 +121,23 @@ namespace Sudoku_CHABRIER_REGNARD
 
                 if (!onlyNumbers)
                 {
-                    message.ForeColor = Color.Red;
+                    message.ForeColor = Color.White;
                     message.Text += "Enter only numbers !\r\n";
                 }
                 if (!allFilled)
                 {
-                    message.ForeColor = Color.Red;
+                    message.ForeColor = Color.White;
                     message.Text += "Fill all boxes !\r\n";
                 }
 
                 if (sudokuGrid.checkAnswer())
                 {
-                    message.ForeColor = Color.Green;
+                    message.ForeColor = Color.White;
                     message.Text = "You win !\r\n";
                 }
                 else
                 {
-                    message.ForeColor = Color.Red;
+                    message.ForeColor = Color.White;
                     message.Text += "Try again !\r\n";
                 }
             }
